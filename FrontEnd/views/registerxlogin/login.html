@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bejeletkezés</title>
+  <link rel="stylesheet" href="/regiszterxlogin.css" />
+
+
+<body>
+  <div class="container">
+    <h2>Bejeletkezés</h2>
+    <form id="loginform">
+      <div class="form-group">
+        <label for="login_email">Email cím vagy Felhasználónév:</label>
+        <input type="text" id="loginusername" name="login_email" required />
+      </div>
+      <div class="form-group">
+        <label for="login_password">Jelszó:</label>
+        <input type="password" id="loginpassword" name="login_password" required />
+      </div>
+      <div class="form-group">
+        <button type="submit">Bejeletkezés</button>
+      </div>
+    </form>
+    <div class="menu">
+      <a href="/regisztracio">Regisztráció</a>
+    </div>
+
+  </div>
+
+
+
+  <div id="myHeader" class="header">
+    <a href="javascript:void(0)" class="openbtn" onclick="openNav()">☰</a>
+    <a href="/" class="active">Főoldal</a>
+  </div>
+
+  <div id="mySidebar" class="slidebar"> <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="/">Főoldal</a>
+    <a href="/hasznaltauto">Hasznaltautók</a>
+    <a href="/bonto">Használt alkatrészek</a>
+  </div>
+  <div id="main">
+
+  </div>
+
+  <script src="/regxlogin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+    } 
+  </script>
+
+
+
+
+
+</body>
+
+</html>

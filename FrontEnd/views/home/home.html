@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>A&AA.hu</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/home.css'>
+</head>
+
+<body>
+    <section class="">
+        <div id="myHeader" class="header">
+            <a href="javascript:void(0)" class="openbtn" onclick="openNav()">☰</a>
+            <a href="/" class="active">Főoldal</a>
+            <a href="/logout" class="active">Kijelentkezes</a>
+            <div class="lxr" id="lxr">
+                <!--Gombok helye-->
+            </div>
+        </div>
+
+        <div id="mySidebar" class="slidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="/">Főoldal</a>
+            <a href="/hasznaltauto">Hasznaltautók</a>
+            <a href="/bonto">Használt alkatrészek</a>
+        </div>
+    </section>
+
+    <div id="main">
+        <h1>Auto & Alkatrész Arzenál</h1>
+        <div class="kartyak">
+            <a href="/hasznaltauto">
+                <div>
+                    <img src="" alt="">
+                    <h2>Használt Piac</h2>
+                    <p>Itt elado autok es szarok lesznek es teljesen jo aron xd</p>
+                    <p>Tovább</p>
+                </div>
+            </a>
+
+            <a href="/bonto">
+                <div>
+                    <img src="" alt="">
+                    <h2>Bontott alkatrészek</h2>
+                    <p>Karbantartás alatt</p>
+                    <p>Tovább</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script src="/home.js"></script>
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        } 
+    </script>
+</body>
+
+</html>

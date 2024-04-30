@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Bontott alkatrészek</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/bonto.css'>
+</head>
+<body>
+    <section class="">
+        <div id="myHeader" class="header">
+            <a href="javascript:void(0)" class="openbtn" onclick="openNav()">☰</a>
+            <a href="/" class="active">Főoldal</a>
+            <a href="/logout" class="active">Kijelentkezes</a>
+            <div class="lxr" id="lxr">
+                <!--Gombok helye-->
+            </div>
+        </div>
+
+        <div id="mySidebar" class="slidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="/">Főoldal</a>
+            <a href="/hasznaltauto">Hasznaltautók</a>
+            <a href="/bonto">Használt alkatrészek</a>
+        </div>
+    </section>
+
+
+    <div id="overlay" onclick="closeModal()"></div>
+    <div id="modal">
+        <span id="closeBtn" onclick="closeModal()" style="font-size: 36px;">&times;</span>
+        <h2>Bontott alkatrész eladása</h2>
+
+        <form id="newcarform" enctype="multipart/form-data">
+            <div class="form-item">
+                <p>Cim</p>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="form-item">
+                <p>Leiras</p>
+                <input type="text" id="description" name="description" required>
+            </div>
+            <div class="form-item">
+                <p>Varos</p>
+                <input type="text" id="varos" name="varos" required>
+            </div>
+            <hr style="width: 100%; border: none; height: 1px; background-color: black;">
+            <h4>Muszaki adatok</h4>
+            <div class="form-item">
+                <p>evjarat</p>
+                <input type="month" name="year" id="year" min="1940-01" required>
+            </div>
+            <div class="form-item">
+                <p>Marka</p>
+                <select name="markaid" id="markaid" onchange="loadModelSelect()" required></select>
+            </div>
+            <div class="form-item">
+                <p>Model</p>
+                <select name="modelid" id="modelid" required></select>
+            </div>
+            <div class="form-item">
+                <p>price</p>
+                <input type="text" id="price" name="price" required>
+            </div>
+
+            <div class="form-item">
+                <p>Kep</p>
+                <input type="file" name="images" id="images" required>
+            </div>
+            <div class="form-item">
+                <button>Feltoltes</button>
+            </div>
+            
+        </form>
+    </div>
+
+
+    <div class="frame">
+        <div class="kereses">
+            <h1>Keresés</h1>
+            <div>
+                <label for="ar">Ár</label>
+                <div >
+                    <input  type="number"  name="ar" id="ar" placeholder="-től">
+                    <input type="number"  name="ar" id="ar" placeholder="-ig">
+                </div>
+                <label for="marka">Márka</label>
+                <div>
+                    <select name="marka" id="marka">
+                        <option value="0">--Mind--</option>
+                    </select>
+                </div>
+                <label for="modell">Modell</label>
+                <div>
+                    <select name="modell" id="modell">
+                        <option value="0">--Mind--</option>
+                    </select>
+                </div>
+                <label for="evjarat">Évjárat</label>
+                <div>
+                    <input type="number"  name="evjarat" id="evjarat" placeholder="-től">
+                    <input type="number"  name="evjarat" id="evjarat" placeholder="-ig">
+                </div>
+            </div>
+            
+            <div class="keresobuttonok" id="keresobuttonok">
+                <button>Keresés</button>
+                <hr>
+            </div>
+        </div>
+    <div>
+        <div class="navbar">
+            <h1>Bontott alkatrészek</h1>
+        </div>
+        <section>
+            <Div class="card-frame" id="card-frame">
+                
+            </Div>
+        </section>
+    </div>
+</div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/bonto.js"></script>
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        } 
+    </script>
+</body>
+</html>
+
+
+

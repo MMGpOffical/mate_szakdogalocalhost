@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regisztráció</title>
+    <link rel="stylesheet" href="/regiszterxlogin.css">
+</head>
+
+
+<body>
+    <div class="container">
+        <h2>Regisztráció</h2>
+        <form id="regform">
+            <div class="form-group">
+                <label for="username">Felhasználónév:</label>
+                <input type="text" id="regusername" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Jelszó:</label>
+                <input type="password" id="regpassword" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Jelszó:</label>
+                <input type="password" id="regpasswordagain" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="regemail" name="email" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Regisztráció</button>
+            </div>
+            <div class="menu">
+                <a href="/bejelentkezes">Bejeletkezés</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+<div id="myHeader" class="header">
+    <a href="javascript:void(0)" class="openbtn" onclick="openNav()">☰</a>
+    <a href="/" class="active">Főoldal</a>
+</div>
+
+<div id="mySidebar" class="slidebar"> <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="/">Főoldal</a>
+    <a href="/hasznaltauto">Hasznaltautók</a>
+    <a href="/bonto">Használt alkatrészek</a>
+</div>
+<div id="main">
+
+</div>
+
+<script src="/regxlogin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+    }
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    } 
+</script>
+
+
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Használt auto</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/hasznalt.css'>
+</head>
+
+<body>
+    <section class="">
+        <div id="myHeader" class="header">
+            <a href="javascript:void(0)" class="openbtn" onclick="openNav()">☰</a>
+            <a href="/" class="active">Főoldal</a>
+            <a href="/logout" class="active">Kijelentkezes</a>
+            <div class="lxr" id="lxr">
+                <!--Gombok helye-->
+            </div>
+        </div>
+
+        <div id="mySidebar" class="slidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="/">Főoldal</a>
+            <a href="/hasznaltauto">Hasznaltautók</a>
+            <a href="/bonto">Használt alkatrészek</a>
+        </div>
+    </section>
+
+
+    <div id="overlay" onclick="closeModal()"></div>
+    <div id="modal">
+        <span id="closeBtn" onclick="closeModal()" style="font-size: 36px;">&times;</span>
+        <h2>Auto eladasa</h2>
+
+        <form id="newcarform" enctype="multipart/form-data">
+            <div class="form-item">
+                <p>Cim</p>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="form-item">
+                <p>Leiras</p>
+                <input type="text" id="description" name="description" required>
+            </div>
+            <div class="form-item">
+                <p>Varos</p>
+                <input type="text" id="varos" name="varos" required>
+            </div>
+            <hr style="width: 100%; border: none; height: 1px; background-color: black;">
+            <h4>Muszaki adatok</h4>
+            <div class="form-item">
+                <p>Uzemanyag</p>
+                <select name="gastype" id="gastype" required>
+                    <option value="Benzin">Benzin</option>
+                    <option value="Dizel">dizel</option>
+                    <option value="Elektromos">egyebb</option>
+                    <option value="Hibrid dízel">egyebb</option>
+                    <option value="Hibrid benzin">egyebb</option>
+                    <option value="egyebb">egyebb</option>
+                    <option value="egyebb">egyebb</option>
+                </select>
+            </div>
+            <div class="form-item">
+                <p>evjarat</p>
+                <input type="month" name="year" id="year" min="1940-01" required >
+            </div>
+            <div class="form-item">
+                <p>Marka</p>
+                <select name="markaid" id="markaid" onchange="loadModelSelect()" onkeyup="loadModelSelect()" required></select>
+            </div>
+            <div class="form-item">
+                <p>Model</p>
+                <select name="modelid" id="modelid" required></select>
+            </div>
+            <div class="form-item">
+                <p>tipus</p>
+                <input type="text" id="type" name="type">
+            </div>
+            <div class="form-item">
+                <p>price</p>
+                <input type="text" id="price" name="price" required>
+            </div>
+            <div class="form-item">
+                <p>km ora allas</p>
+                <input type="text" name="kmoraallas" id="kmoraallas" required>
+            </div>
+            <div class="form-item">
+                <p>kivitel</p>
+                <select name="kivitelid" id="kivitelid" required>
+                </select>
+            </div>
+
+            <div class="form-item">
+                <p>cm³</p>
+                <input type="number" name="kobcenti" id="kobcenti" required>
+            </div>
+            <div class="form-item">
+                <p>kW</p>
+                <input type="number" name="kw" id="kw" required>
+            </div>
+
+            <div class="form-item">
+                <p>Kep</p>
+                <input type="file" name="images" id="images" multiple required>
+            </div>
+            <div class="form-item">
+                <button>Feltoltes</button>
+            </div>
+
+        </form>
+    </div>
+
+
+    <div class="frame" id="frame">
+        <div class="kereses" id="kereses">
+            <form action="/searchinhasznaltauto" method="get">
+                <h1 id="keresesh1">Keresés</h1>
+            
+                <p class="closeSearch" onclick="closeSearch()">X</p>
+
+                <div>
+                    <label for="ar">Ár</label>
+                    <div >
+                        <input  type="number"  name="minprice" id="ar" placeholder="-től">
+                        <input type="number"  name="maxprice" id="ar" placeholder="-ig">
+                    </div>
+
+                    <label for="marka">Márka</label>
+                    <div>
+                        <select name="marka" id="marka">
+                            <option value="">--Mind--</option>
+                        </select>
+                    </div>
+
+                    <label for="modell">Modell</label>
+                    <div>
+                        <select name="modell" id="modell">
+                            <option value="">--Mind--</option>
+                        </select>
+                    </div>
+
+                    <label for="evjarat">Évjárat</label>
+                    <div>
+                        <input type="number"  name="minyear" id="evjarat" placeholder="-től">
+                        <input type="number"  name="maxyear" id="evjarat" placeholder="-ig">
+                    </div>
+
+                    <label for="uzemanyag">Üzemanyag</label>
+                    <div>
+                        <select name="uzemanyag" id="uzemanyag">
+                            <option value="">--Mind--</option>
+                        </select>
+                    </div>
+
+                    <label for="teljesitmeny">Teljesítmény(kw)</label>
+                    <div>
+                        <input type="number"  name="minteljesitmeny" id="teljesitmeny" placeholder="-től">
+                        <input type="number"  name="maxteljesitmeny" id="teljesitmeny" placeholder="-ig">
+                    </div>
+
+                    <label for="hengerurtartalom">Hengerűrtartalom(cm³)</label>
+                    <div>
+                        <input type="number"  name="minhengerurtartalom" id="hengerurtartalom" placeholder="-től">
+                        <input type="number"  name="maxhengerurtartalom" id="hengerurtartalom" placeholder="-ig">
+                    </div>
+
+                    <label for="kivitel">Kivitel</label>
+                    <div>
+                        <select name="kivitel" id="kivitel"><option value="">--Vlálasszon--</option></select>
+                    </div>
+                </div>
+
+                <div class="keresobuttonok" id="keresobuttonok">
+                    <button type="submit">Keresés</button>
+                    <hr>
+                </div>
+            </form>
+        </div>
+        <div>
+            <div class="navbar">
+                <p onclick="openSearch()">☰</p>
+                <h1>Használt Autók</h1>
+            </div>
+            <section>
+                <Div class="card-frame" id="card-frame">
+
+                </Div>
+            </section>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/hasznalt.js"></script>
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        } 
+
+
+        function openSearch() {
+            var windowWidth = window.innerWidth;
+
+            document.getElementById("kereses").style.display = "flex";
+            if (windowWidth <= 620) {
+                document.getElementById("frame").style.gridTemplateColumns = "100%";
+            } else {
+                document.getElementById("frame").style.gridTemplateColumns = "240px auto";
+            }
+            
+        }
+        function closeSearch() {
+            document.getElementById("kereses").style.display = "none";
+            document.getElementById("frame").style.gridTemplateColumns = "100%";
+        } 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>A&AA.hu</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/user.css'>
+</head>
+
+<body>
+    <section class="">
+        <div id="myHeader" class="header">
+            <a href="javascript:void(0)" class="openbtn" onclick="openNav()">☰</a>
+            <a href="/" class="active">Főoldal</a>
+            <div class="lxr" id="lxr">
+                <!--Gombok helye-->
+            </div>
+        </div>
+
+        <div id="mySidebar" class="slidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="/">Főoldal</a>
+            <a href="/hasznaltauto">Hasznaltautók</a>
+            <a href="/bonto">Használt alkatrészek</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <h3>Fiók adatok</h3>
+        <div>
+            <p id="useremail"></p>
+            <p id="username"></p>
+            <p id="szerepkor"></p>
+            <p id="phone"></p>
+            <form id="telfrissites">
+                <label for="phone">Telefon:</label>
+                <input type="tel" name="phone" id="phoneid">
+                <button type="submit">Frissites</button>
+            </form>
+        </div>
+    </main>
+
+
+
+    <script src="/user.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        } 
+    </script>
+</body>
+
+</html>

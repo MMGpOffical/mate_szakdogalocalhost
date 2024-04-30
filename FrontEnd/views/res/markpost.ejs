@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>
+        <%= post.title %>
+    </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="/marketpost.css">
+    <script src="https://kit.fontawesome.com/543ba7d761.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="shortcut icon" href="/logo" type="image/x-icon">
+    <link rel='stylesheet' type='text/css' media='screen' href='/reszletes.css'>
+</head>
+
+<body>
+
+
+
+    <section class="">
+        <div id="myHeader" class="header">
+            <a href="javascript:void(0)" class="openbtn" onclick="openNav()">☰</a>
+            <a href="/" class="active">Főoldal</a>
+
+            <div class="lxr" id="lxr">
+                <!--Gombok helye-->
+            </div>
+        </div>
+        <div id="mySidebar" class="slidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="/">Főoldal</a>
+            <a href="/hasznaltauto">Hasznaltautók</a>
+            <a href="/hasznaltalkatresz">Használt alkatrészek</a>
+            
+        </div>
+    </section>
+
+    <!--hasznaltauto reszletek kezd-->
+
+    <div>
+        <h2>Eladó <%= post.title %>
+        </h2>
+    </div>
+
+    <!--képek-->
+    <div class="kozepre">
+        <div class="container" id="imgslider">
+
+
+
+        </div>
+    </div>
+
+
+    <!--képek-->
+
+    <div class="infok">
+
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>
+                            Ár:
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Vételár:
+                        </td>
+                        <td>
+                            <strong>
+                                <div>
+                                    <%= post.price %> Ft
+                                </div>
+                            </strong>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>
+                            Jármű adatai:
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Évjárat:
+                        </td>
+                        <td>
+                            <strong>
+                                <%= post.year %>
+                            </strong>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            Márka:
+                        </td>
+                        <td>
+                            <strong>
+                                <%= post.marka %>
+                            </strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Model:
+                        </td>
+                        <td>
+                            <strong>
+                                <%= post.model %>
+                            </strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Típus:
+                        </td>
+                        <td>
+                            <strong>
+                                <%= post.type %>
+                            </strong>
+                        </td>
+                    </tr>
+
+
+
+
+                    <tr>
+                        <td>
+                            Kivitel:
+                        </td>
+                        <td>
+                            <strong>
+                                <%= post.kivitel %>
+                            </strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Km. óra állás:
+                        </td>
+                        <td>
+                            <strong>
+                                <%= post.kmoraallas %> km
+                            </strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Üzemanyag:
+                        </td>
+                        <td>
+                            <strong>
+                                <%= post.gastype %>
+                            </strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Hengerűrtartalom:
+                        </td>
+                        <td>
+                            <strong>
+                                <%= post.hengerurtartalom %> cm³
+                            </strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Teljesítmény:</td>
+                        <td>
+                            <strong>
+                                <%= post.kw %> kW, <%= post.loero %> LE
+                            </strong>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <div>
+                        <tr>
+                            <th>
+                                Leírás:
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <%= post.description %>
+                            </td>
+                        </tr>
+                    </div>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>
+                            Eladó adatai:
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            eladási hely
+                        </td>
+                        <td>
+                            <strong>
+                                <%= post.varos %>
+                            </strong>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            telefonszám
+                        </td>
+                        <td>
+                            <strong>
+                                <%= post.phonenumber %>
+                            </strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            E-mail cím
+                        </td>
+                        <td>
+                            <strong>
+                                <%= post.email %>
+                            </strong>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!--hasznaltauto reszletek vege -->
+
+
+
+    <script src="/reszletes.js"></script>
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+    </script>
+</body>
+
+</html>
