@@ -41,7 +41,7 @@ function setbtn() {
     var buttonplace = document.getElementById('keresobuttonok');
     if (logineduserID != undefined) {
         buttonplace.innerHTML += `
-          <button onclick="openModal()">Új hírdetés</button>
+          <div onclick="openModal()">Új hírdetés</div>
         `;
     } else {
     }

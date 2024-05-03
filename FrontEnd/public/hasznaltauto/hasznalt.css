@@ -285,6 +285,17 @@ body {
 }
 
 .keresobuttonok :nth-child(3) {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background-color: #212121;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
     outline: 3px transparent #212121;
     outline-offset: 0px;
     transition: .2s all cubic-bezier(.47, -0.5, .44, 1.81);
